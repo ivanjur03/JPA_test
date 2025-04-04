@@ -23,5 +23,4 @@ public class Student {
     @Column(name="birthday")
     public Date birthday;
 
-
 }
