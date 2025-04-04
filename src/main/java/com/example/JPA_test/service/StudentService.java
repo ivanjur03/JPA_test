@@ -2,10 +2,12 @@ package com.example.JPA_test.service;
 
 import com.example.JPA_test.entity.Student;
 import com.example.JPA_test.repository.StudentDAO;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class StudentService {
     private StudentDAO studentDAO;
 
