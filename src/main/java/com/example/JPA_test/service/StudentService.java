@@ -34,4 +34,8 @@ public class StudentService {
         return studentDAO.findStudentsOlderThan(minAge);
     }
 
+    public Integer studentsNamedIvan() {
+        return studentDAO.findStudentsNamedIvan();
+    }
+
 }

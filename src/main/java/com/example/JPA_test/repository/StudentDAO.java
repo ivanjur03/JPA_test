@@ -12,5 +12,8 @@ public interface StudentDAO extends JpaRepository<Student, Integer> {
     @Query("SELECT s FROM Student s WHERE s.age > :minAge")
     List<Student> findStudentsOlderThan(@Param("minAge") int minAge);
 
+    @Query(value = "SELECT COUNT(*) FROM student where email LIKE 'ivan%' ", nativeQuery = true)
+    Integer findStudentsNamedIvan();
+
 
 }
