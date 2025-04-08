@@ -2,6 +2,7 @@ package com.example.JPA_test.rest;
 
 import com.example.JPA_test.entity.Student;
 import com.example.JPA_test.service.StudentService;
+import com.example.JPA_test.service.StudentServiceDev;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,6 +16,11 @@ public class TestController {
 
     @Autowired
     private StudentService studentService;
+
+    @GetMapping("/profile")
+    public String profile() {
+        return studentService.profile();
+    }
 
     @PostMapping("/student")
     public ResponseEntity<Student> save(@RequestBody Student student) {
