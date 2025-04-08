@@ -30,4 +30,8 @@ public class StudentService {
         studentDAO.deleteById(id);
     }
 
+    public List<Student> studentsOlderThan(int minAge) {
+        return studentDAO.findStudentsOlderThan(minAge);
+    }
+
 }

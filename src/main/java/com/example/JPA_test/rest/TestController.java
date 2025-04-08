@@ -16,18 +16,23 @@ public class TestController {
     @Autowired
     private StudentService studentService;
 
-    @PostMapping("/getall")
-    public ResponseEntity<Student> update(@RequestBody Student student) {
+    @PostMapping("/student")
+    public ResponseEntity<Student> save(@RequestBody Student student) {
         studentService.save(student);
         return ResponseEntity.status(HttpStatus.CREATED).body(student);
     }
 
-    @GetMapping
+    @GetMapping("/student")
     public List<Student> findAll() {
         return studentService.findAll();
     }
 
-    @DeleteMapping
+    @GetMapping("/student/{age}")
+    public List<Student> findStudentsOld(@PathVariable int age) {
+        return studentService.studentsOlderThan(age);
+    }
+
+    @DeleteMapping("/student/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void delete(@PathVariable int id) {
         studentService.deleteById(id);
