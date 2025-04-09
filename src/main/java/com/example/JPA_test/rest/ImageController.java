@@ -2,6 +2,8 @@ package com.example.JPA_test.rest;
 
 import com.example.JPA_test.entity.ImageData;
 import com.example.JPA_test.service.ImageService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -18,6 +20,8 @@ public class ImageController {
     @Autowired
     private ImageService imageService;
 
+    Logger logger = LoggerFactory.getLogger(ImageController.class);
+
     @PostMapping("/upload")
     public ResponseEntity<String> storeImage(@RequestParam("file") MultipartFile file) {
          try{
@@ -30,6 +34,8 @@ public class ImageController {
 
     @GetMapping("/get/{id}")
     public ResponseEntity<byte[]> getImage(@PathVariable int id) {
+
+        logger.info("get image with id {}", id);
         if(imageService.getImageById(id).isPresent()){
             ImageData imageData = imageService.getImageById(id).get();
             HttpHeaders headers = new HttpHeaders();
