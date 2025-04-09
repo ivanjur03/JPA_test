@@ -44,8 +44,4 @@ public class ImageController {
             return ResponseEntity.notFound().build();
         }
     }
-
-
-
-
 }

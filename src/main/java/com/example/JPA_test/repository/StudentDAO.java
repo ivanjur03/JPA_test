@@ -14,6 +14,4 @@ public interface StudentDAO extends JpaRepository<Student, Integer> {
 
     @Query(value = "SELECT COUNT(*) FROM student where email LIKE 'ivan%' ", nativeQuery = true)
     Integer findStudentsNamedIvan();
-
-
 }

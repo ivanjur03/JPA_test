@@ -11,8 +11,6 @@ import java.util.Optional;
 @Service
 @Profile("prod")
 public class StudentServiceProd implements StudentService {
-
-
     private StudentDAO studentDAO;
 
     public StudentServiceProd(StudentDAO studentDAO) {
@@ -22,6 +20,7 @@ public class StudentServiceProd implements StudentService {
     public List<Student> findAll() {
         return studentDAO.findAll();
     }
+
     public Optional<Student> findById(int id) {
         return studentDAO.findById(id);
     }

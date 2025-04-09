@@ -20,6 +20,7 @@ public class StudentServiceDev implements StudentService {
     public List<Student> findAll() {
         return studentDAO.findAll();
     }
+
     public Optional<Student> findById(int id) {
         return studentDAO.findById(id);
     }
@@ -43,6 +44,4 @@ public class StudentServiceDev implements StudentService {
     public String profile(){
         return "Ovo je dev profil!!";
     }
-
-
 }
